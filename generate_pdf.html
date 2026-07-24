@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>김민우 | AI 기반 업무혁신 & HRD Transformation 포트폴리오</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-primary: #1E3A8A;       /* Pantone Classic Blue */
+      --color-primary-light: #2563EB;
+      --color-primary-dark: #0F172A;
+      --color-accent: #15803D;        /* Pantone Greenery */
+      --color-accent-light: #16A34A;
+      --color-accent-bg: #F0FDF4;
+      --color-highlight: #D97706;     /* Pantone Illuminating Accent */
+      --color-highlight-bg: #FFFBEB;
+      --color-bg: #F8FAFC;
+      --color-surface: #FFFFFF;
+      --color-text: #0F172A;
+      --color-text-muted: #334155;
+      --color-border: #CBD5E1;
+      --font-main: 'Noto Sans KR', 'Inter', -apple-system, sans-serif;
+      --font-code: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #CBD5E1;
+      color: var(--color-text);
+      line-height: 1.48;
+      word-break: keep-all;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Fixed A4 Page Container (Strictly 276mm to fill A4 without page splitting) */
+    .page {
+      width: 210mm;
+      height: 276mm;
+      max-height: 276mm;
+      padding: 10mm 14mm 10mm 14mm;
+      background-color: var(--color-bg);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      page-break-inside: avoid;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    @media screen {
+      .page {
+        margin: 20px auto;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.2);
+        border-radius: 4px;
+      }
+    }
+
+    /* Page Header */
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 6px;
+      border-bottom: 2.5px solid var(--color-primary);
+      margin-bottom: 10px;
+    }
+    .page-header-brand {
+      font-size: 11pt;
+      font-weight: 900;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+    }
+    .page-header-brand span {
+      color: var(--color-accent-light);
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+    .page-header-meta {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+
+    /* Page Footer */
+    .page-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 6px;
+      border-top: 1px solid var(--color-border);
+      font-size: 8pt;
+      color: var(--color-text-muted);
+      margin-top: 6px;
+    }
+    .page-number {
+      font-family: var(--font-code);
+      font-weight: 800;
+      color: var(--color-primary);
+      background-color: var(--color-surface);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+    }
+
+    /* Typography */
+    .section-tag {
+      font-size: 8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent-light);
+      margin-bottom: 2px;
+    }
+    .page-title {
+      font-size: 17.5pt;
+      font-weight: 900;
+      color: var(--color-primary-dark);
+      line-height: 1.2;
+      margin-bottom: 3px;
+      letter-spacing: -0.03em;
+    }
+    .page-subtitle {
+      font-size: 9pt;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* Card System */
+    .card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .card-primary {
+      background-color: var(--color-primary-dark);
+      color: #FFFFFF;
+      border: none;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      background-color: var(--color-accent-bg);
+      color: var(--color-accent-light);
+      border: 1px solid rgba(22, 163, 74, 0.3);
+    }
+    .badge-primary {
+      background-color: #EFF6FF;
+      color: var(--color-primary-light);
+      border-color: #BFDBFE;
+    }
+    .badge-highlight {
+      background-color: var(--color-highlight-bg);
+      color: var(--color-highlight);
+      border-color: #FDE68A;
+    }
+
+    /* Grids */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+    /* PAGE 1: COVER SPECIFIC */
+    .cover-container {
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+      color: #FFFFFF;
+      margin: -10mm -14mm;
+      padding: 20mm 18mm;
+      height: 276mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cover-top-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 99px;
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: #4ADE80;
+      letter-spacing: 0.05em;
+    }
+    .cover-title {
+      font-size: 30pt;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+    .cover-quote {
+      font-size: 14pt;
+      font-weight: 700;
+      color: #4ADE80;
+      padding-left: 12px;
+      border-left: 4px solid #4ADE80;
+      margin-bottom: 16px;
+    }
+    .cover-desc {
+      font-size: 10pt;
+      color: #CBD5E1;
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    /* Story & Table Box */
+    .story-box {
+      border-radius: 6px;
+      padding: 9px 11px;
+      font-size: 8pt;
+    }
+    .story-title {
+      font-size: 8.5pt;
+      font-weight: 800;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    table.dense-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+      text-align: left;
+    }
+    table.dense-table th {
+      background-color: var(--color-primary-dark);
+      color: #FFFFFF;
+      padding: 5px 8px;
+      font-weight: 700;
+    }
+    table.dense-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 01: COVER ==================== -->
+  <div class="page" style="padding: 0;">
+    <div class="cover-container">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <div style="font-size: 17pt; font-weight: 900; color: #FFF; letter-spacing: -0.02em;">KIM MINWOO</div>
+            <div style="font-size: 9.5pt; color: #94A3B8; font-weight: 600; margin-top: 2px;">HRD & Work Process Innovation Specialist</div>
+          </div>
+          <span class="cover-top-tag">EXECUTIVE PORTFOLIO 2026</span>
+        </div>
+
+        <div style="margin-top: 36px;">
+          <div class="cover-title">
+            AI를 활용해<br>일하는 방식을 바꿉니다.
+          </div>
+          <div class="cover-quote">
+            “Turning AI into Better Ways of Working.”
+          </div>
+          <p class="cover-desc">
+            HRD, 데이터 분석, 조직문화를 생성형 AI와 연결하여 파편화된 반복 업무를 구조화하고, 의사결정의 질과 실질적 성과를 높이는 김민우의 10페이지 채용 제출용 브랜딩 포트폴리오입니다.
+          </p>
+        </div>
+
+        <!-- Key Highlights Box -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px;">
+          <div style="background: rgba(255,255,255,0.06); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12);">
+            <div style="font-size: 8pt; color: #4ADE80; font-weight: 700;">🏆 부총리 겸 교육부장관상 수상</div>
+            <div style="font-size: 8.5pt; color: #FFF; font-weight: 800; margin-top: 2px;">공정채용·AI 면접 실적 분석</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.06); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12);">
+            <div style="font-size: 8pt; color: #60A5FA; font-weight: 700;">⚡ 수작업 문의 30% 감축</div>
+            <div style="font-size: 8.5pt; color: #FFF; font-weight: 800; margin-top: 2px;">인사/복리후생 AI Chatbot 제작</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        <div style="font-size: 8.5pt; color: #CBD5E1; line-height: 1.5;">
+          <div><strong>지원자</strong>: 김민우 (Kim Minwoo) | <strong>자격</strong>: HRM 전문가, 컴활 1급</div>
+          <div><strong>주요 분야</strong>: HRD Transformation · AI 업무자동화 · HR Data Analytics</div>
+          <div><strong>이메일</strong>: lovingsky77@gmail.com</div>
+          <div><strong>웹 포트폴리오</strong>: https://lovingsky77-dot.github.io/portfolio/</div>
+        </div>
+        <div style="background-color: #FFF; padding: 6px; border-radius: 6px; text-align: center;">
+          <svg viewBox="0 0 100 100" width="60" height="60">
+            <rect width="100" height="100" fill="#FFFFFF"/>
+            <path d="M10 10h30v30h-30zM50 10h40v10h-40zM50 30h20v10h-20zM10 50h10v40h-10zM30 50h20v20h-20zM60 50h30v40h-30z" fill="#1E3A8A"/>
+            <rect x="18" y="18" width="14" height="14" fill="#15803D"/>
+          </svg>
+          <div style="font-size: 6.5pt; font-weight: 800; color: #0F172A; margin-top: 2px;">웹 포트폴리오 스캔</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 02: PROFESSIONAL PROFILE ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">02 / PROFESSIONAL PROFILE</div>
+      </div>
+
+      <div class="section-tag">EXECUTIVE SUMMARY</div>
+      <h1 class="page-title">전문 프로필 & 3대 핵심 역량 축</h1>
+      <p class="page-subtitle">건축학 전공의 구조적 체계성과 7년 7개월간 축적한 HR 실무 경험을 결합하여, 현업의 문제를 AI와 데이터로 해결하는 업무혁신 전문가입니다.</p>
+
+      <div class="card card-primary" style="margin-bottom: 10px; padding: 12px 14px;">
+        <div style="font-size: 9.5pt; font-weight: 800; color: #4ADE80; margin-bottom: 3px;">💡 Executive Summary</div>
+        <p style="font-size: 8pt; color: #F1F5F9; line-height: 1.55;">
+          총 경력 7년 7개월간 ㈜대동, 한국유미코아, ㈜에스알에서 HRD, 노무, 인사평가, 경영평가를 전담했습니다. 단순 AI 도구 사용에 그치지 않고, 사내 규정 문서를 지식 기반 프롬프트와 AI Chatbot으로 전환(문의 30% 감축)하였으며, 공정채용 AI 면접 데이터 구조화를 통해 사회부총리 겸 교육부장관상을 수상했습니다.
+        </p>
+      </div>
+
+      <div style="font-size: 9.5pt; font-weight: 800; margin-bottom: 6px; color: var(--color-primary);">
+        🎯 3대 핵심 브랜드 축 (Core Capability Pillars)
+      </div>
+      <div class="grid-3" style="margin-bottom: 10px;">
+        <div class="card" style="border-top: 3px solid var(--color-primary-light);">
+          <span class="badge badge-primary" style="margin-bottom: 3px;">01. AI Application</span>
+          <h3 style="font-size: 9pt; font-weight: 800; margin-bottom: 2px;">생성형 AI 업무 적용</h3>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); line-height: 1.45;">
+            사내 FAQ 데이터를 프롬프트와 챗봇으로 구축하여 담당자 직접 문의 30% 감축 및 24시간 응대 체계 확보.
+          </p>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-accent-light);">
+          <span class="badge" style="margin-bottom: 3px;">02. Work Innovation</span>
+          <h3 style="font-size: 9pt; font-weight: 800; margin-bottom: 2px;">업무 프로세스 구조화</h3>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); line-height: 1.45;">
+            파편화된 채용 수치 및 ESI 만족도를 매트릭스로 정제하여 5일 만에 장관상 도출 및 데이터 기반 의사결정 지원.
+          </p>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-highlight);">
+          <span class="badge badge-highlight" style="margin-bottom: 3px;">03. HRD Transformation</span>
+          <h3 style="font-size: 9pt; font-weight: 800; margin-bottom: 2px;">HRD & 조직 문화 혁신</h3>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); line-height: 1.45;">
+            GenZ 소통 매뉴얼과 AI 대화 시나리오를 결합한 역량 교육 설계로 실무 적용성 강화 및 이탈률 0% 달성.
+          </p>
+        </div>
+      </div>
+
+      <div style="font-size: 9.5pt; font-weight: 800; margin-bottom: 6px; color: var(--color-primary);">
+        📈 경력 성장 흐름 (Career Trajectory)
+      </div>
+      <div class="card" style="padding: 10px; margin-bottom: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; text-align: center;">
+          <div style="flex: 1;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: var(--color-text-muted);">㈜에스알 (3년 7개월)</div>
+            <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-primary);">HRM & 데이터 분석</div>
+            <div style="font-size: 7pt; color: var(--color-accent-light); font-weight: 700;">장관상 · ESI 개발</div>
+          </div>
+          <div style="color: var(--color-border); font-weight: 900;">➔</div>
+          <div style="flex: 1;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: var(--color-text-muted);">한국유미코아 (1년 6개월)</div>
+            <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-primary);">글로벌 HR & Audit</div>
+            <div style="font-size: 7pt; color: var(--color-accent-light); font-weight: 700;">유연근무 · VOE · ISO</div>
+          </div>
+          <div style="color: var(--color-border); font-weight: 900;">➔</div>
+          <div style="flex: 1;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: var(--color-text-muted);">㈜대동 (2년 6개월 ~)</div>
+            <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-primary);">AI 업무혁신 & HRD</div>
+            <div style="font-size: 7pt; color: var(--color-accent-light); font-weight: 700;">AI Chatbot · GenZ 매뉴얼</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Added HRM Specialist to Qualifications Box -->
+      <div style="font-size: 9.5pt; font-weight: 800; margin-bottom: 5px; color: var(--color-primary);">
+        📜 보유 전문 자격 및 표창 (Certifications & Honors)
+      </div>
+      <div class="grid-2">
+        <div class="card" style="font-size: 7.5pt; padding: 7px 10px;">
+          <strong>• 교육부장관상 수상 (2020.12)</strong>: 공정채용/블라인드 채용 경진대회<br>
+          <strong>• 대표이사 우수직원 표창 2회 (2019, 2021)</strong>: ㈜에스알
+        </div>
+        <div class="card" style="font-size: 7.5pt; padding: 7px 10px;">
+          <strong>• 보유 전문 자격</strong>: <span style="color: var(--color-accent-light); font-weight: 800;">HRM 전문가</span>, 컴퓨터활용능력 1급, 건축기사, 한국사 1급<br>
+          <strong>• 어학 역량</strong>: TOEIC Speaking Lv.6 (중급 비즈니스 영어)
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | Executive Profile</div>
+      <div class="page-number">02 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 03: AI FRAMEWORK ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">03 / AI WORK INNOVATION FRAMEWORK</div>
+      </div>
+
+      <div class="section-tag">METHODOLOGY</div>
+      <h1 class="page-title">AI 업무혁신 5단계 프레임워크</h1>
+      <p class="page-subtitle">현업의 비효율 문제를 도출하여 AI 자동화 시스템 구축과 조직 확산까지 연결하는 검증된 체계입니다.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px;">
+        
+        <div class="card" style="border-left: 4px solid #EF4444; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 8.5pt; color: #EF4444;">STEP 01. Problem Discovery (문제 발견 및 정의)</strong>
+            <span class="badge" style="background-color: #FEF2F2; color: #EF4444; border-color: #FCA5A5;">문제 정의</span>
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            사내 파편화된 인사 규정, 반복적인 단순 문의로 인한 시간 손실, 경험 의존적 데이터 분석 한계 등 현업 병목 지점을 수치화하여 도출.
+          </p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-primary-light); padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 8.5pt; color: var(--color-primary-light);">STEP 02. Process Structuring (업무 프로세스 구조화)</strong>
+            <span class="badge badge-primary">구조화</span>
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            자주 묻는 질의(FAQ) 시나리오 작성, 채용/만족도 수치 엑셀 매트릭스 정제 등 비정형 업무 데이터를 AI가 해석 가능한 형태로 재설계.
+          </p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-accent-light); padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 8.5pt; color: var(--color-accent-light);">STEP 03. AI Application & Automation (AI 적용 및 자동화)</strong>
+            <span class="badge">AI 자동화</span>
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            생성형 AI Engine 프롬프트 엔지니어링, 인사/복리후생 AI Chatbot 직접 제작, GenZ 소통 대화 모의 시나리오 모듈 구현.
+          </p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-highlight); padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 8.5pt; color: var(--color-highlight);">STEP 04. Human Validation & Audit (품질 검증 및 노무 검토)</strong>
+            <span class="badge badge-highlight">품질 검증</span>
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            ISO 45001/IATF Audit 대응 경험 및 HRM 전문가 자격 기반으로 AI 결과물의 환각(Hallucination) 및 사내 인사 규정/노무 리스크 정밀 검증.
+          </p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #8B5CF6; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 8.5pt; color: #8B5CF6;">STEP 05. Performance & Cultural Expansion (성과 측정 및 조직 확산)</strong>
+            <span class="badge" style="background-color: #F5F3FF; color: #8B5CF6; border-color: #DDD6FE;">조직 확산</span>
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            문의 30% 감축 성과 산출, 사내 가이드북 배포, 계층별 교육 커리큘럼 이식 및 타 부서로의 표준 프로세스 전파.
+          </p>
+        </div>
+
+      </div>
+
+      <div style="font-size: 9pt; font-weight: 800; margin-bottom: 5px; color: var(--color-primary);">
+        📊 프레임워크 단계별 담당자 역할 및 대표 산출물 매트릭스
+      </div>
+      <table class="dense-table" style="margin-bottom: 8px;">
+        <thead>
+          <tr>
+            <th style="width: 20%;">단계</th>
+            <th style="width: 35%;">담당자 핵심 역할 (My Role)</th>
+            <th style="width: 45%;">대표 산출물 (Key Deliverables)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>01. Problem Def</strong></td>
+            <td>현업 수작업 병목 수치화 & 요구도 분석</td>
+            <td>인사/복지 문의 현황 분석표, 교육 요구도 결과</td>
+          </tr>
+          <tr>
+            <td><strong>02. Structuring</strong></td>
+            <td>비정형 문서의 지식 베이스화 및 매트릭스화</td>
+            <td>인사 FAQ 나리지 베이스, 채용 실적 정제표</td>
+          </tr>
+          <tr>
+            <td><strong>03. AI Automate</strong></td>
+            <td>챗봇 직접 구축 & 프롬프트 엔지니어링</td>
+            <td>사내 인사 AI Chatbot, GenZ 소통 대화 시나리오</td>
+          </tr>
+          <tr>
+            <td><strong>04. Validation</strong></td>
+            <td>노무/사규 준수 검증 & AI 환각 제어</td>
+            <td>인사 Audit 대응 검증서, AI 챗봇 예외처리 로직</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="card" style="background-color: var(--color-accent-bg); border-color: rgba(22,163,74,0.3); padding: 8px 10px;">
+        <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-accent-light); margin-bottom: 1px;">
+          🔒 AI Quality Governance Principle
+        </div>
+        <div style="font-size: 7.5pt; color: var(--color-text);">
+          “AI에 무조건적인 자동화를 맡기지 않습니다. 사람(Human)의 최종 판단과 노무 규정 검증(Validation)이 결합될 때 비로소 신뢰할 수 있는 인사 생산성이 만들어집니다.”
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | AI Work Innovation Framework</div>
+      <div class="page-number">03 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 04: CASES OVERVIEW ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">04 / SELECTED CASES OVERVIEW</div>
+      </div>
+
+      <div class="section-tag">PROJECT MAP</div>
+      <h1 class="page-title">대표 업무혁신 사례 요약 매트릭스</h1>
+      <p class="page-subtitle">실제 비즈니스 문제를 해결하고 정량적 성과를 만들어낸 3대 대표 프로젝트 지도입니다.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px;">
+
+        <div class="card" style="border-left: 4px solid var(--color-primary-light); padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <span class="badge badge-primary">Case 01 | AI Application</span>
+            <span style="font-size: 7pt; font-weight: 700; color: var(--color-text-muted);">㈜대동 | 2025.08 ~ 현재</span>
+          </div>
+          <h3 style="font-size: 9.5pt; font-weight: 800; margin-bottom: 2px;">
+            인사/복리후생 AI Chatbot 기획 및 제작
+          </h3>
+          <div style="font-size: 7.5pt; color: var(--color-text-muted); margin-bottom: 3px;">
+            <strong>문제 & AI:</strong> 파편화된 인사 규정 수작업 질문 집중 ➔ 사내 FAQ 지식 기반 구조화 및 생성형 AI 챗봇 구축
+          </div>
+          <div style="font-size: 8pt; font-weight: 800; color: var(--color-accent-light); background-color: var(--color-accent-bg); padding: 2px 7px; border-radius: 4px; display: inline-block;">
+            🏆 핵심 성과: 담당자 수작업 문의 응대량 약 30% 감축 & 24시간 문의 대응
+          </div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-accent-light); padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <span class="badge">Case 02 | Work Innovation</span>
+            <span style="font-size: 7pt; font-weight: 700; color: var(--color-text-muted);">㈜에스알 | 2020.10 ~ 2020.12</span>
+          </div>
+          <h3 style="font-size: 9.5pt; font-weight: 800; margin-bottom: 2px;">
+            5일 만에 완성한 AI 면접 & 공정채용 실적 분석
+          </h3>
+          <div style="font-size: 7.5pt; color: var(--color-text-muted); margin-bottom: 3px;">
+            <strong>문제 & AI:</strong> 경진대회 5일 전 분석 데이터 부재 위기 ➔ AI 면접 성과 정제 및 삼무정도경영 연계 시각화
+          </div>
+          <div style="font-size: 8pt; font-weight: 800; color: var(--color-primary-light); background-color: #EFF6FF; padding: 2px 7px; border-radius: 4px; display: inline-block;">
+            🏆 핵심 성과: 공정채용 경진대회 부총리 겸 교육부장관상 수상 (2020.12)
+          </div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-highlight); padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <span class="badge badge-highlight">Case 03 | HRD Transformation</span>
+            <span style="font-size: 7pt; font-weight: 700; color: var(--color-text-muted);">㈜대동 | 2025.08 ~ 현재</span>
+          </div>
+          <h3 style="font-size: 9.5pt; font-weight: 800; margin-bottom: 2px;">
+            GenZ 소통/협업 매뉴얼 & 계층별 AI 교육기획
+          </h3>
+          <div style="font-size: 7.5pt; color: var(--color-text-muted); margin-bottom: 3px;">
+            <strong>문제 & AI:</strong> 세대 간 소통 차이 및 강의식 교육의 한계 ➔ AI 대화 모의 시나리오 결합 커리큘럼 설계
+          </div>
+          <div style="font-size: 8pt; font-weight: 800; color: var(--color-highlight); background-color: var(--color-highlight-bg); padding: 2px 7px; border-radius: 4px; display: inline-block;">
+            🏆 핵심 성과: 적용 중심 교육 전환, 전사 소통 매뉴얼 표준화 & 이탈률 0%
+          </div>
+        </div>
+
+      </div>
+
+      <div style="font-size: 9pt; font-weight: 800; margin-bottom: 4px; color: var(--color-primary);">
+        📋 3대 대표 사례 프로젝트 비교 분석표
+      </div>
+      <table class="dense-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>Case 01 (AI Chatbot)</th>
+            <th>Case 02 (공정채용 장관상)</th>
+            <th>Case 03 (GenZ & HRD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>핵심 기술</strong></td>
+            <td>Generative AI, Custom Chatbot</td>
+            <td>AI 면접 매트릭스, Data Clean</td>
+            <td>AI Scenario, Curriculum Design</td>
+          </tr>
+          <tr>
+            <td><strong>본인 역할</strong></td>
+            <td>기획 및 챗봇 제작 전담 (100%)</td>
+            <td>공정채용 TF 담당자 (90%)</td>
+            <td>교육기획 & 조직문화 담당</td>
+          </tr>
+          <tr>
+            <td><strong>재현 가능성</strong></td>
+            <td>타 부서(총무/IT) 확산 가능</td>
+            <td>채용 수치 자동 집계 표준화</td>
+            <td>전사 하이브리드 리더십 교육</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | Selected Cases Overview</div>
+      <div class="page-number">04 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 05: CASE STUDY 01 ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">05 / CASE STUDY 01</div>
+      </div>
+
+      <div style="display: flex; gap: 5px; align-items: center; margin-bottom: 2px;">
+        <span class="badge badge-primary">Case Study 01</span>
+        <span style="font-size: 7.5pt; color: var(--color-text-muted); font-weight: 600;">㈜대동 | 인사팀 대리 (개인 기여도 100%)</span>
+      </div>
+      <h1 class="page-title" style="font-size: 14pt;">
+        인사/복리후생 AI Chatbot 기획 및 직접 제작
+      </h1>
+      <p class="page-subtitle" style="margin-bottom: 8px;">파편화된 인사 규정을 24시간 응대 자동화 구조로 전환하여 담당자 문의 부담 감축</p>
+
+      <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px;">
+        
+        <div class="story-box" style="background-color: #FEF2F2; border: 1px solid #FCA5A5;">
+          <div class="story-title" style="color: #EF4444;">1. Challenge (기존 문제 & 원인)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text);">
+            휴가, 복리후생, 사규 관련 반복 질의가 전화/메일로 매일 수십 건씩 수작업 집중되어, 전략적 교육 기획 업무 집중도가 저하되고 임직원의 답변 대기 시간 증가.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: #EFF6FF; border: 1px solid #BFDBFE;">
+          <div class="story-title" style="color: var(--color-primary-light);">2. Insight & AI Approach (접근 방식)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text);">
+            단순 문답집 배포로는 미준수율이 높음을 파악. 인사/복지 규정 텍스트를 지식 기반 데이터베이스로 구조화하고, 예외 문의 처리 분기 프롬프트를 설계하여 AI Chatbot 직접 제작.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: var(--color-surface); border: 1px solid var(--color-border);">
+          <div class="story-title" style="color: var(--color-text);">3. Execution (구체적 실행)</div>
+          <ul style="font-size: 7.5pt; color: var(--color-text-muted); padding-left: 10px;">
+            <li>사내 인사/복지 FAQ 데이터 정제 및 질의 시나리오 프롬프트 엔지니어링</li>
+            <li>AI 챗봇 직접 구축 및 인사 담당자 연결 예외 가이드라인 수립</li>
+            <li>신규입사자 교육 및 사내 포털 배포, 사용자 가이드북 작성</li>
+          </ul>
+        </div>
+
+        <div class="story-box" style="background-color: var(--color-accent-bg); border: 1px solid rgba(22,163,74,0.3);">
+          <div class="story-title" style="color: var(--color-accent-light);">4. Outcome (검증 성과)</div>
+          <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-accent-light); margin: 1px 0;">
+            👉 담당자 직접 수작업 문의 응대량 약 30% 감축
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            24시간 상시 문의 대응 체계 정립, 임직원 정보 접근성 개선, 담당자의 기획 업무 몰입 시간 확보.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: #F5F3FF; border: 1px solid #DDD6FE;">
+          <div class="story-title" style="color: #8B5CF6;">5. Learning & Scalability (학습 및 확장)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            AI 도입의 핵심은 도구 자체가 아닌 규정 문서의 표준화임을 검증. 타 부서(총무, IT, 노무) 응대 챗봇으로 전사 확장 가능.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card" style="padding: 6px 10px; background-color: var(--color-bg);">
+        <div style="font-size: 8pt; font-weight: 800; color: var(--color-primary);">🛠️ Chatbot 구축 사용 도구 & 지식 기반 맵</div>
+        <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+          Generative AI Engine · Prompt Engineering · 사내 FAQ DB 정제 · 챗봇 사용자 매뉴얼
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | Case Study 01 (AI Chatbot)</div>
+      <div class="page-number">05 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 06: CASE STUDY 02 ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">06 / CASE STUDY 02</div>
+      </div>
+
+      <div style="display: flex; gap: 5px; align-items: center; margin-bottom: 2px;">
+        <span class="badge">Case Study 02</span>
+        <span style="font-size: 7.5pt; color: var(--color-text-muted); font-weight: 600;">㈜에스알 | 인사노무처 주임 (개인 기여도 90%)</span>
+      </div>
+      <h1 class="page-title" style="font-size: 14pt;">
+        5일 만에 완성한 AI 면접 & 공정채용 실적 분석
+      </h1>
+      <p class="page-subtitle" style="margin-bottom: 8px;">긴급 상황에서 데이터 정제 및 AI 평가 성과 증명으로 교육부장관상 수상</p>
+
+      <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px;">
+        
+        <div class="story-box" style="background-color: #FEF2F2; border: 1px solid #FCA5A5;">
+          <div class="story-title" style="color: #EF4444;">1. Challenge (위기 상황)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text);">
+            공정채용 경진대회 제출까지 단 5일 남은 시점에서 채용 실적 데이터 분석 자료가 정리되어 있지 않아 제출 자체가 무산될 위기.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: #EFF6FF; border: 1px solid #BFDBFE;">
+          <div class="story-title" style="color: var(--color-primary-light);">2. AI & Data Approach (데이터 구조화 방식)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text);">
+            경영공시 수치와 내부 채용 데이터를 정량 매트릭스로 긴급 정제. AI 면접 제도 도입 성과와 여성/지역인재 채용 비율을 삼무정도경영과 연계하여 평가자 관점 스토리 구성.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: var(--color-surface); border: 1px solid var(--color-border);">
+          <div class="story-title" style="color: var(--color-text);">3. Execution (5일 몰입 실행)</div>
+          <ul style="font-size: 7.5pt; color: var(--color-text-muted); padding-left: 10px;">
+            <li>전형별 채용 인원 및 AI 면접 결과 수치 매트릭스 재구성</li>
+            <li>채용 담당자와 긴밀 소통으로 AI 기반 블라인드 채용 가이드 성과 시각화</li>
+            <li>5일간 밤샘 몰입 작업으로 경진대회 발표 및 최종 실적 보고서 제출</li>
+          </ul>
+        </div>
+
+        <div class="story-box" style="background-color: #EFF6FF; border: 1.5px solid var(--color-primary-light);">
+          <div class="story-title" style="color: var(--color-primary); font-size: 8.5pt;">4. Outcome (최고 영예 수상)</div>
+          <div style="font-size: 9.5pt; font-weight: 900; color: var(--color-primary); margin: 1px 0;">
+            🏆 공정채용·블라인드채용 경진대회 부총리 겸 교육부장관상 수상 (2020.12)
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            공공기관 채용 트렌드 반영 모범사례 공식 인정 및 기관 브랜드 공정성 제고.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: #F5F3FF; border: 1px solid #DDD6FE;">
+          <div class="story-title" style="color: #8B5CF6;">5. Learning (핵심 배운 점)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            시간이 촉박할수록 핵심 본질(AI 면접/공정성 수치)을 파악하고 평가자의 시각에서 명확히 시각화하는 역량이 결과를 좌우함을 배움.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card" style="padding: 6px 10px; background-color: var(--color-bg);">
+        <div style="font-size: 8pt; font-weight: 800; color: var(--color-primary);">📊 5일간의 데이터 정제 & AI 면접 핵심 평가 요소</div>
+        <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+          전형별 인원 집계 ➔ 여성/지역인재 채용 비율 추출 ➔ AI 면접 블라인드 공정성 분석 ➔ 5일 몰입 완성
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | Case Study 02 (AI 면접 & 장관상)</div>
+      <div class="page-number">06 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 07: CASE STUDY 03 ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">07 / CASE STUDY 03</div>
+      </div>
+
+      <div style="display: flex; gap: 5px; align-items: center; margin-bottom: 2px;">
+        <span class="badge badge-highlight">Case Study 03</span>
+        <span style="font-size: 7.5pt; color: var(--color-text-muted); font-weight: 600;">㈜대동 | 인사팀 대리 (HRD & 조직문화)</span>
+      </div>
+      <h1 class="page-title" style="font-size: 14pt;">
+        GenZ 소통 매뉴얼 & 계층별 AI 교육기획
+      </h1>
+      <p class="page-subtitle" style="margin-bottom: 8px;">세대 간 소통 격차 해소 및 적용 중심 HRD 커리큘럼 결합으로 조직문화 혁신</p>
+
+      <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px;">
+        
+        <div class="story-box" style="background-color: #FEF2F2; border: 1px solid #FCA5A5;">
+          <div class="story-title" style="color: #EF4444;">1. Challenge (조직 문화 문제)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text);">
+            GenZ 세대 신규입사자의 적응 과정에서 기존 관리자 세대와의 소통 방식 차이로 협업 효율 저하. 기존 강좌 중심 교육의 실무 적용 한계.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: #EFF6FF; border: 1px solid #BFDBFE;">
+          <div class="story-title" style="color: var(--color-primary-light);">2. AI & HRD Approach (결합형 접근)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text);">
+            생성형 AI 시나리오 기획을 활용해 상황별 소통 대화 가이드를 개발하고, 법정필수/신규입사자 실습 과정에 결합하여 참여형 교육으로 전환.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: var(--color-surface); border: 1px solid var(--color-border);">
+          <div class="story-title" style="color: var(--color-text);">3. Execution (교육 프로세스 개발)</div>
+          <ul style="font-size: 7.5pt; color: var(--color-text-muted); padding-left: 10px;">
+            <li>GenZ 소통 및 협업 설문 데이터 분석 및 매뉴얼 기획안 수립</li>
+            <li>AI 기반 대화 시나리오 모듈을 반영한 계층별 교육 커리큘럼 기획</li>
+            <li>대학 시절 17주 PPT 교육 경험(29명 이탈률 0% 수료)을 응용한 피드백 프로세스 운영</li>
+          </ul>
+        </div>
+
+        <div class="story-box" style="background-color: var(--color-accent-bg); border: 1px solid rgba(22,163,74,0.3);">
+          <div class="story-title" style="color: var(--color-accent-light);">4. Outcome (조직 변화)</div>
+          <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-accent-light); margin: 1px 0;">
+            👉 수동적 교육에서 적용 중심 교육 체계 전환 & 소통 매뉴얼 전사 배포
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            신규입사자 교육 만족도 제고 및 세대 간 협업 소통 격차 완화.
+          </p>
+        </div>
+
+        <div class="story-box" style="background-color: #F5F3FF; border: 1px solid #DDD6FE;">
+          <div class="story-title" style="color: #8B5CF6;">5. Learning (조직 확산 통찰)</div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted);">
+            조직 문화 개선은 구체적 행동 매뉴얼과 AI 참여형 프로세스가 결합할 때 비로소 실행력을 지님을 검증함.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card" style="padding: 6px 10px; background-color: var(--color-bg);">
+        <div style="font-size: 8pt; font-weight: 800; color: var(--color-primary);">🎓 17주 커리큘럼 피드백 운영 노하우 (이탈률 0% 달성)</div>
+        <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+          부원 사전 니즈 조사 ➔ 수준별 그룹 지도 ➔ 보충 실습 운영 ➔ PPT 경진대회 개최 (29명 수료 완료)
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | Case Study 03 (GenZ & HRD)</div>
+      <div class="page-number">07 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 08: ADDITIONAL EVIDENCE ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">08 / HR DATA ANALYTICS EVIDENCE</div>
+      </div>
+
+      <div class="section-tag">DATA ANALYTICS EVIDENCE</div>
+      <h1 class="page-title">HR Data Analytics & 데이터 기반 행정 증거</h1>
+      <p class="page-subtitle">단순 직관을 넘어 계량화된 상관분석과 사규 규정 수립으로 증명하는 데이터 관리 역량입니다.</p>
+
+      <div class="grid-2" style="margin-bottom: 10px;">
+        <div class="card" style="border-top: 3px solid var(--color-primary-light);">
+          <span class="badge badge-primary" style="margin-bottom: 3px;">HR Analytics</span>
+          <h3 style="font-size: 9pt; font-weight: 800; margin-bottom: 2px;">ESI(직원만족도) 상관분석</h3>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); margin-bottom: 4px;">
+            ㈜에스알 ESI 만족도 지표 신규 개발 및 반기별 계량 평가 진행.
+          </p>
+          <div style="background-color: var(--color-bg); padding: 5px; border-radius: 4px; font-size: 7pt; color: var(--color-text);">
+            • <strong>방식:</strong> 직급/직렬/근속/성별 그룹별 상관분석<br>
+            • <strong>성과:</strong> 단순 평점에서 데이터 기반 인사 개선안 도출
+          </div>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-accent-light);">
+          <span class="badge" style="margin-bottom: 3px;">Audit & Compliance</span>
+          <h3 style="font-size: 9pt; font-weight: 800; margin-bottom: 2px;">KMR 인권경영 시스템 인증</h3>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); margin-bottom: 4px;">
+            3년간 연간 인권경영 추진계획 수립 및 KMR 인증 획득 (2020.12).
+          </p>
+          <div style="background-color: var(--color-bg); padding: 5px; border-radius: 4px; font-size: 7pt; color: var(--color-text);">
+            • <strong>글로벌 대응:</strong> ISO 45001, IATF 16949 Audit 대응<br>
+            • <strong>노무 관리:</strong> VOE 고충처리 및 유연근무제 설계
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size: 9pt; font-weight: 800; margin-bottom: 5px; color: var(--color-primary);">
+        🔄 일하는 방식의 Before & After 대조표
+      </div>
+      <table class="dense-table" style="margin-bottom: 8px;">
+        <thead>
+          <tr>
+            <th style="width: 25%;">업무 영역</th>
+            <th style="width: 37.5%;">Traditional (Before)</th>
+            <th style="width: 37.5%;">AI & Data Innovation (After)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 700;">인사/복지 문의</td>
+            <td style="color: #EF4444;">전화/메일 수작업 반복 질의 집중</td>
+            <td style="color: var(--color-accent-light); font-weight: 700;">AI Chatbot 자동 응대 (문의 30% 감축)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700;">채용 데이터 분석</td>
+            <td style="color: #EF4444;">급박한 대외보고 시 수작업 정제 과다</td>
+            <td style="color: var(--color-accent-light); font-weight: 700;">AI면접 매트릭스 표준화 (교육부장관상)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700;">사내 교육 및 문화</td>
+            <td style="color: #EF4444;">일방향 강의식 강좌, 실무 적용 난제</td>
+            <td style="color: var(--color-accent-light); font-weight: 700;">GenZ 매뉴얼 & AI 대화 (수료율 100%)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="card" style="padding: 6px 10px; background-color: var(--color-bg);">
+        <div style="font-size: 8pt; font-weight: 800; color: var(--color-primary);">📋 ISO & Global Audit 대응 준수 항목</div>
+        <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+          ISO 45001 안전보건 HR 규정 · IATF 16949 품질 대응 · 선택적/탄력적 근로제 사규 가이드 수립
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | HR Data Analytics Evidence</div>
+      <div class="page-number">08 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 09: CAREER & CAPABILITY ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">09 / CAREER & CAPABILITY MAP</div>
+      </div>
+
+      <div class="section-tag">CAREER & SKILLS</div>
+      <h1 class="page-title">경력 여정 & 실무 활용 스킬셋 Map</h1>
+      <p class="page-subtitle">의미 없는 % 퍼센트 막대 대신, 실제 업무 프로젝트에서 도구를 어떻게 활용했는지 설명합니다.</p>
+
+      <div style="font-size: 9pt; font-weight: 800; color: var(--color-primary); margin-bottom: 5px;">
+        🏛️ 주요 경력 사항 (총 7년 7개월)
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px;">
+        
+        <div class="card" style="padding: 7px 10px;">
+          <div style="display: flex; justify-content: space-between;">
+            <strong style="font-size: 8.5pt;">㈜대동 | 인사팀 대리 (2년 6개월 ~ 재직중)</strong>
+            <span style="font-size: 7pt; color: var(--color-text-muted);">매출 1조원 / 종업원 1,200명</span>
+          </div>
+          <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+            • 사내 교육기획 & 조직문화 개선 (GenZ 소통 매뉴얼 기획, 계층별 역량 교육)<br>
+            • 인사/복리후생 AI Chatbot 직접 제작 (수작업 문의 30% 감축)
+          </div>
+        </div>
+
+        <div class="card" style="padding: 7px 10px;">
+          <div style="display: flex; justify-content: space-between;">
+            <strong style="font-size: 8.5pt;">한국유미코아(유) | HR 주임 (1년 6개월)</strong>
+            <span style="font-size: 7pt; color: var(--color-text-muted);">매출 8,320억원 / 종업원 900명</span>
+          </div>
+          <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+            • 근무시간 관리(유연근무제), VOE 고충처리 채널 및 퇴직자 면담 운영<br>
+            • 글로벌 HR Audit (ISO 45001, IATF 16949) 대응
+          </div>
+        </div>
+
+        <div class="card" style="padding: 7px 10px;">
+          <div style="display: flex; justify-content: space-between;">
+            <strong style="font-size: 8.5pt;">㈜에스알 | 인사노무처 주임 (3년 7개월)</strong>
+            <span style="font-size: 7pt; color: var(--color-text-muted);">운송 공공기관 / 종업원 600명</span>
+          </div>
+          <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+            • 공정채용 경진대회 데이터 정제 및 부총리 겸 교육부장관상 수상 (2020.12)<br>
+            • ESI(직원만족도) 상관분석 지표 개발, MBO 인사평가 도입, KMR 인권경영 인증
+          </div>
+        </div>
+
+      </div>
+
+      <div style="font-size: 9pt; font-weight: 800; color: var(--color-primary); margin-bottom: 5px;">
+        🛠️ 실무 도구 & 활용 맥락 (Tools in Action)
+      </div>
+      <div class="grid-2" style="margin-bottom: 8px;">
+        <div class="card" style="font-size: 7pt; padding: 6px 8px;">
+          <strong>• Generative AI Engine & Chatbot</strong><br>
+          사내 규정 지식 기반 구조화 및 인사/복지 AI 챗봇 빌딩 (문의 30% 감축)
+        </div>
+        <div class="card" style="font-size: 7pt; padding: 6px 8px;">
+          <strong>• Prompt Engineering & Scenarios</strong><br>
+          GenZ 소통 매뉴얼 및 업무 상황별 AI 예외 처리 프롬프트 설계
+        </div>
+        <div class="card" style="font-size: 7pt; padding: 6px 8px;">
+          <strong>• Advanced MS Excel & Analytics</strong><br>
+          ESI 직원만족도 다변량 상관분석 및 공정채용 데이터 매트릭스 구현
+        </div>
+        <div class="card" style="font-size: 7pt; padding: 6px 8px;">
+          <strong>• HR Systems & Audit Standards</strong><br>
+          ISO 45001, IATF 16949 HR Audit 대응 및 KMR 인권경영 인증
+        </div>
+      </div>
+
+      <!-- Added HRM Specialist to Page 09 Skill Context -->
+      <div class="card" style="padding: 6px 10px; background-color: var(--color-bg);">
+        <div style="font-size: 7.5pt; font-weight: 800; color: var(--color-primary);">💡 보유 전문 자격 및 대외 소통 역량</div>
+        <div style="font-size: 7pt; color: var(--color-text-muted); margin-top: 1px;">
+          <span style="color: var(--color-accent-light); font-weight: 800;">HRM 전문가</span> · 컴퓨터활용능력 1급 · 건축기사 · 한국사 1급 · MS Office (상급) · 국정감사/노사협의회 대응
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>김민우 포트폴리오 | Career & Capability Map</div>
+      <div class="page-number">09 / 10</div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PAGE 10: VALUE PROPOSITION & CONTACT ==================== -->
+  <div class="page">
+    <div>
+      <div class="page-header">
+        <div class="page-header-brand">KIM MINWOO <span>AI × HRD Transformation</span></div>
+        <div class="page-header-meta">10 / VALUE PROPOSITION & CONTACT</div>
+      </div>
+
+      <div class="section-tag">FUTURE CONTRIBUTION</div>
+      <h1 class="page-title">입사 후 제공 가치 & 소통 채널</h1>
+      <p class="page-subtitle">기술을 보여주는 데서 멈추지 않고, 실제 성과로 연결되는 업무 방식을 설계합니다.</p>
+
+      <div style="font-size: 9pt; font-weight: 800; margin-bottom: 6px; color: var(--color-primary);">
+        🚀 입사 후 조직에 기여할 3가지 실행 약속
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px;">
+        
+        <div class="card" style="border-left: 4px solid var(--color-primary-light); padding: 7px 10px;">
+          <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-primary-light);">
+            1. 파편화된 인사/복지 규정의 AI 챗봇화 및 문의 자동화 구축
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); margin-top: 1px;">
+            반복 문의 수작업을 30% 이상 감축하여, 팀 전체가 고차원적 전략 기획 업무에 집중할 수 있는 구조를 만듭니다.
+          </p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-accent-light); padding: 7px 10px;">
+          <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-accent-light);">
+            2. 경험 중심 HR에서 데이터 기반(HR Data Analytics) 의사결정으로 전환
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); margin-top: 1px;">
+            만족도 및 평가 데이터를 계량화·상관분석하여 경영진 및 리더십에게 객관적인 근거 지표를 제공합니다.
+          </p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-highlight); padding: 7px 10px;">
+          <div style="font-size: 8.5pt; font-weight: 800; color: var(--color-highlight);">
+            3. GenZ 문화 및 AI 역량을 결합한 실무 적용형 HRD 커리큘럼 확산
+          </div>
+          <p style="font-size: 7.5pt; color: var(--color-text-muted); margin-top: 1px;">
+            일방향 교육을 탈피하고, 실무에 즉시 적용 가능한 소통 매뉴얼과 AI 대화 시나리오 실습으로 교육 성과를 극대화합니다.
+          </p>
+        </div>
+
+      </div>
+
+      <div style="font-size: 9pt; font-weight: 800; margin-bottom: 5px; color: var(--color-primary);">
+        📅 입사 후 30-60-90일 실행 로드맵 (Execution Roadmap)
+      </div>
+      <div class="grid-3" style="margin-bottom: 10px;">
+        <div class="card" style="font-size: 7.5pt; padding: 6px 8px;">
+          <strong style="color: var(--color-primary-light);">• 30일차</strong><br>
+          조직 규정 및 수작업 문의 파악, FAQ 지식 데이터 정제
+        </div>
+        <div class="card" style="font-size: 7.5pt; padding: 6px 8px;">
+          <strong style="color: var(--color-accent-light);">• 60일차</strong><br>
+          AI Chatbot 1차 빌딩 & 주요 소통 매뉴얼 가이드 수립
+        </div>
+        <div class="card" style="font-size: 7.5pt; padding: 6px 8px;">
+          <strong style="color: var(--color-highlight);">• 90일차</strong><br>
+          문의 30% 감축 검증 & 전사 AI HRD 커리큘럼 이식
+        </div>
+      </div>
+
+      <div class="card card-primary" style="padding: 10px 14px; text-align: center; margin-bottom: 10px;">
+        <div style="font-size: 10pt; font-weight: 900; color: #4ADE80; margin-bottom: 2px;">
+          “AI를 도입하는 것보다 중요한 것은, 실제 일하는 방식을 바꾸는 것입니다.”
+        </div>
+        <div style="font-size: 7.5pt; color: #CBD5E1;">
+          조직의 생산성과 소통 문화를 바꾸는 실질적인 변화를 만들어 내겠습니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Area -->
+    <div>
+      <div class="card" style="border: 2px solid var(--color-accent-light); padding: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <div>
+          <div style="font-size: 10pt; font-weight: 900; color: var(--color-primary);">김민우 | HRD & 업무혁신 전문가</div>
+          <div style="font-size: 8pt; color: var(--color-text-muted); margin-top: 1px;">
+            📧 <strong>Direct Email</strong>: <a href="mailto:lovingsky77@gmail.com" style="color: var(--color-accent-light); font-weight: 700;">lovingsky77@gmail.com</a>
+          </div>
+          <div style="font-size: 8pt; color: var(--color-text-muted); margin-top: 1px;">
+            🌐 <strong>Interactive Web Portfolio</strong>: <a href="https://lovingsky77-dot.github.io/portfolio/" style="color: var(--color-primary-light); font-weight: 700;">https://lovingsky77-dot.github.io/portfolio/</a>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <svg viewBox="0 0 100 100" width="50" height="50">
+            <rect width="100" height="100" fill="#FFFFFF"/>
+            <path d="M10 10h30v30h-30zM50 10h40v10h-40zM50 30h20v10h-20zM10 50h10v40h-10zM30 50h20v20h-20zM60 50h30v40h-30z" fill="#1E3A8A"/>
+            <rect x="18" y="18" width="14" height="14" fill="#15803D"/>
+          </svg>
+          <div style="font-size: 6pt; font-weight: 700; color: var(--color-text-muted); margin-top: 1px;">스마트폰 스캔</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <div>김민우 포트폴리오 | Value Proposition & Contact</div>
+        <div class="page-number">10 / 10</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
